@@ -3,14 +3,14 @@ import GuestList from './GuestList'
 import Counter from './Counter'
 
 function App() {
-  const [addName, setAddName] = useState('');
-  const [guests, setGuests] = useState([]);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editGuestId, setEditGuestId] = useState('');
-  const [hideGuest, setHideGuest] = useState(false);
+  const [addName, setAddName] = useState<string>('');
+  const [guests, setGuests] = useState<Array<any>>([]);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [editGuestId, setEditGuestId] = useState<string>('');
+  const [hideGuest, setHideGuest] = useState<boolean>(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const handleSubmit:(event: React.FormEvent<HTMLFormElement>) => void = (event)=> {
+    event.preventDefault(); 
     //If the input field is blank
     if(!addName && !isEditing){
       alert("You can't submit a blank name"); 
@@ -18,7 +18,7 @@ function App() {
     }
     //Edit guest name
     if(addName && isEditing){
-      const editedGuestList = guests.map((guest) => {
+      const editedGuestList: {guestName: string, id: string,  isConfirmed: boolean}[] = guests.map((guest: any) => {
         if(guest.id === editGuestId){
           return {
             ...guest,
@@ -42,8 +42,8 @@ function App() {
   }
 
   //Checkbox for guests for unconfirmed or confirmed
-  const toggleConfirmation = (id) => {
-    const toggleGuest = guests.map((guest) => {
+  const toggleConfirmation = (id: string) => {
+    const toggleGuest = guests.map((guest: any) => {
       if(guest.id === id){
         return {
           ...guest,
@@ -57,7 +57,7 @@ function App() {
   }
 
   //Removes the guest when the remove button is clicked
-  const handleRemoveGuest = (id) => {
+  const handleRemoveGuest = (id: string) => {
     if(isEditing){
       alert('Please edit the guest name');
       return;
@@ -67,7 +67,7 @@ function App() {
   }
 
   //Edit the guest name when the edit button is clicked
-  const editGuestName = (id) => {
+  const editGuestName = (id: string) => {
     if(isEditing) return;
     const getGuestToEdit = guests.find((guest) => guest.id === id);
     setAddName(getGuestToEdit.guestName);

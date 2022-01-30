@@ -71,15 +71,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 React Rsvp
 
-This is a rvsp application to help keep track of invited guests, however it was targeted to be used for front end and not have any data sent to a database. It keeps track of the names of guests when submitted and provides visual feedback on the guests that are confirmed and unconfirmed.
+An rvsp application to help keep track of invited guests, however it was meant to be used for front end and not have any data sent to a database. It keeps track of the names of guests when submitted and provides visual feedback on the guests that are confirmed and unconfirmed.
 
-The original project was from https://teamtreehouse.com/home , which utilized React's class based components. This project utilizes React hooks, and has similar features in functionality and some CSS differences compared to the original (colors of the buttons and background image was changed). Furthermore it is able to edit, add, and remove guests based off button clicks. When the checkbox is checked it can hide guests that didn't respond.
+The original project was from https://teamtreehouse.com/home , which utilized React's class based components. This project utilizes React hooks and Typescript, and has similar features in functionality and contains some differences in CSS compared to the original (colors of the buttons and background image was changed). Furthermore it is able to edit, add, and remove guests based off button clicks. When the checkbox is checked it can hide guests that didn't respond.
 
 Some of the differences between the original and this repository, is when editing a guest name the guest name is displayed on the input field on the picture while the original project provides an input field where the guest name was. Another difference with the original project is when typing into the top input field it displays a preview of where the name will be placed, while this project doesn't provide that feature. With this website it receives CSS styling which sets the guest tiles to visibility hidden, with the original it sets the guest style to display: none.
-
-One of the challenges with this site was that I was unable to implement was providing an input field with the guest name when the edit button was clicked. This feature will be implemented in the future, however to have a editing feature the top input field is used instead to edit names.
-
-There were some bugs that were encountered, such as attempting to delete the name of guest while editing, and when trying to edit a guest name and then moving to edit another name of a guest. Please see lines 62 and 72 of App.js. In order to address these issues the function was exited and a alert box was displayed. Please follow this link if you are unfamiliar with alert boxes. https://www.w3schools.com/jsref/met_win_alert.asp
 
 To run the project please make sure Node Js and NPM is installed, afterwards please follow these steps:
 On Mac open the terminal, or if you're using a Windows open the command prompt type the following commands:
@@ -87,4 +83,4 @@ cd react_rsvp (react_rsvp is the file you downloaded or cloned)
 npm install
 npm start
 
-I hope these descriptions and instructions are helpful HAPPY CODING!!!
+I hope these descriptions and instructions are helpful.

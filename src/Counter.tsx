@@ -1,11 +1,15 @@
 import React from 'react'; 
 
-const Counter = ({guests}) => {
+type Props = {
+  guests: any
+}
+
+const Counter: React.FC<Props> = ({guests}: Props) => {
   return (
     <table className="counter">
       <tbody>
         <tr>
-          <td>Attending: {guests.reduce((total, guest) => {
+          <td>Attending: {guests.reduce((total: number, guest: any) => {
               if(guest.isConfirmed){
                 total++
               }
@@ -14,7 +18,7 @@ const Counter = ({guests}) => {
           <td></td>
         </tr>
         <tr>
-          <td>Unconfirmed: {guests.reduce((total, guest) => {
+          <td>Unconfirmed: {guests.reduce((total: number, guest: any) => {
               if(!guest.isConfirmed){
                 total++
               }
